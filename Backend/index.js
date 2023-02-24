@@ -1,13 +1,11 @@
-const fs= require('fs');
 
-const  file= process.argv;
 
-if(file[2]==="add"){
-    fs.writeFileSync(file[3],file[4])
 
-    }else if(file[2]==="remove"){
-        fs.unlinkSync(file[3])
-    }
-    else{
-        console.log("invalid format")
-    }
+const fs=require("fs");
+const path=require("path");
+const dirPath=path.join(__dirname,"DIR");
+for( i=0;i<5;i++){
+
+    fs.writeFileSync(`${dirPath}/profile${i}.html`,"hello nilesh")
+}
+
