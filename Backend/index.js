@@ -4,3 +4,10 @@ const dirpath=path.join(__dirname,"file");
 for(let i=0;i<5;i++){
     fs.writeFileSync(`${dirpath}/profile${i}.text`,"hello")
 }
+
+
+fs.readdir(dirpath, (err, file)=>{
+  console.log(dirpath);
+
+    console.log(file)
+})
