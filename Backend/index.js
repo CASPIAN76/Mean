@@ -1,13 +1,24 @@
-const fs=require("fs");
+const  fs= require('fs');
+const { dirname } = require('path');
+
 const path=require("path");
-const dirpath=path.join(__dirname,"file");
-for(let i=0;i<5;i++){
-    fs.writeFileSync(`${dirpath}/profile${i}.text`,"hello")
-}
+const dirPath= path.join(__dirname,"file");
+ const filename=`${dirPath}/profile.txt`;
 
 
-fs.readdir(dirpath, (err, file)=>{
-  console.log(dirpath);
+//  fs.writeFileSync(filename," hello Nilesh");
 
-    console.log(file)
-})
+// fs.readFile(filename,(err, mas)=>{
+//     console.log(mas)
+// })
+// fs.readFile(filename, "utf8",(err,msa)=>{
+//     console.log(msa)
+// });
+
+// fs.appendFile(filename, " hou are u", (err)=>{
+//     console.log(err)
+// })
+
+fs.rename(filename, `${dirPath}/page.html`, (err)=>{
+    console.log(err, "err")
+} )
